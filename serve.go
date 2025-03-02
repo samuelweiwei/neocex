@@ -1,13 +1,16 @@
 package main
 
 import (
-	"github.com/gofiber/fiber/v3"
+	"neocex/v2/logging"
+
+	"github.com/gofiber/fiber/v2"
 )
 
 func main() {
 	app := fiber.New()
+	logging.Logger.Info("Starting server......")
 
-	app.Get("/", func(c fiber.Ctx) error {
+	app.Get("/", func(c *fiber.Ctx) error {
 		return c.SendString("Hello, World!")
 	})
 }
