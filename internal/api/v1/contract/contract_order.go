@@ -19,6 +19,7 @@ func (c *ContractOrderAggregate) CreateContractOrder(f *fiber.Ctx) error {
 		return err
 	}
 	userID := utils.GetUserID(f)
+	_ = userID
 	return nil
 }
 func (c *ContractOrderAggregate) UpdateContractOrder() {}
