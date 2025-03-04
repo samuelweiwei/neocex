@@ -6,6 +6,7 @@ require github.com/google/uuid v1.6.0
 
 require (
 	github.com/andybalholm/brotli v1.1.1 // indirect
+	github.com/ericlagergren/decimal v0.0.0-20240411145413-00de7ca16731 // indirect
 	github.com/gofiber/fiber/v2 v2.52.6 // indirect
 	github.com/golang-jwt/jwt/v4 v4.5.1 // indirect
 	github.com/klauspost/compress v1.18.0 // indirect

@@ -1,6 +1,6 @@
 package request
 
-type ContractOrder struct {
+type ContractOrderReq struct {
 	Uuid           string  `json:"uuid"`
 	UserId         uint    `json:"user_id"`
 	SymbolId       uint    `json:"symbol_id"`
