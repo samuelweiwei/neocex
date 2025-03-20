@@ -1,13 +1,19 @@
 package request
 
+import (
+	"neocex/v2/internal/models/contract"
+
+	"github.com/ericlagergren/decimal"
+)
+
 type ContractOrderReq struct {
-	Uuid           string  `json:"uuid"`
-	UserId         uint    `json:"user_id"`
-	SymbolId       uint    `json:"symbol_id"`
-	SymbolName     string  `json:"symbol_name"`
-	Price          float64 `json:"price"`
-	TotalPrice     float64 `json:"total_price"`
-	Margin         float64 `json:"margin"`
-	LeverageRation float64 `json:"leverage_ratio"`
-	Status         uint    `json:"status"`
+	Uuid           string                 `json:"uuid"`
+	UserId         uint                   `json:"user_id"`
+	SymbolId       uint                   `json:"symbol_id"`
+	SymbolName     string                 `json:"symbol_name"`
+	OpenPrice      decimal.Big            `json:"price"`
+	OperationType  contract.OperationType `json:"total_price"`
+	OrderType      contract.OrderType     `json:"order_type"`
+	Margin         decimal.Big            `json:"margin"`
+	LeverageRation int                    `json:"leverage_ratio"`
 }

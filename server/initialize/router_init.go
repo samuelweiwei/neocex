@@ -7,6 +7,6 @@ func Routers() *fiber.App {
 	PublicGroup := Router.Group("/contractorder")
 	PrivateGroup := Router.Group("/contractorder")
 	PrivateGroupFrontUser := Router.Group("/contractorder")
-	initializeBizRouter(PrivateGroup, &PublicGroup, &PrivateGroupFrontUser)
+	initializeBizRouter(PrivateGroup, PublicGroup, PrivateGroupFrontUser)
 	return Router
 }
