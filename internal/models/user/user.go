@@ -8,4 +8,4 @@ type User struct {
 	UpdateTime time.Time
 }
 
-interface IUser {}
+type IUser interface{}
