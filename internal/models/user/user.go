@@ -7,3 +7,5 @@ type User struct {
 	CreateTime time.Time
 	UpdateTime time.Time
 }
+
+interface IUser {}
