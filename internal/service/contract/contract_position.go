@@ -5,8 +5,7 @@ import (
 	"neocex/v2/global"
 	"neocex/v2/internal/models/contract"
 	"neocex/v2/internal/service/symbol"
-
-	"github.com/ericlagergren/decimal"
+	"github.com/ericlagergren/decimal" 
 )
 
 type ContractPositionService struct{}
@@ -26,6 +25,7 @@ func (c *ContractPositionService) GetUnrealizedProfitLoss(userId uint) (unrealiz
 		}
 
 	}
+	return
 }
 
 func (c *ContractPositionService) GetUnrealizedProfitLossSingle(symbolId int, quantity decimal.Big, openPrice decimal.Big, positionType contract.PositionType) (closePrice decimal.Big, unrealizedProfitLoss decimal.Big, err error) {
