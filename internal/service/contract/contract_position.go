@@ -5,7 +5,8 @@ import (
 	"neocex/v2/global"
 	"neocex/v2/internal/models/contract"
 	"neocex/v2/internal/service/symbol"
-	"github.com/ericlagergren/decimal" 
+
+	"github.com/ericlagergren/decimal"
 )
 
 type ContractPositionService struct{}
