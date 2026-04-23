@@ -1,0 +1,16 @@
+./big.go
+./big_ctx.go
+./binary_spliting.go
+./const.go
+./context.go
+./continued_frac.go
+./decomposer.go
+./doc.go
+./format.go
+./format_string.go
+./operatingmode_string.go
+./payload_string.go
+./roundingmode_string.go
+./scan.go
+./util.go
+./zdebug0.go

@@ -1,5 +1,7 @@
 package config
 
+const JWTConfigKey = "jwt"
+
 type JWT struct {
 	SigningKey  string `mapstructure:"signing_key" json:"signing_key" yaml:"signing_key"`
 	BufferTime  string `mapstructure:"buffer_time" json:"buffer_time" yaml:"buffer_time"`

@@ -4,7 +4,6 @@ import (
 	"neocex/v2/global"
 	sysReq "neocex/v2/internal/models/global/req"
 	"net"
-	"strconv"
 	"time"
 
 	"github.com/gofiber/fiber/v2"
@@ -35,21 +34,21 @@ func GetToken(f *fiber.Ctx) string {
 }
 
 func SetToken(c *fiber.Ctx, token string, maxAge int) {
-	//Add cookie to source of network
 	host, _, err := net.SplitHostPort(c.Hostname())
 	if err != nil {
 		host = c.Hostname()
 	}
-	if net.ParseIP(host) != nil {
-		c.Request().Header.SetCookie("token", token)
-		c.Request().Header.SetCookie("Path:", "/")
-		c.Request().Header.SetCookie("Domain:", host)
-		c.Request().Header.SetCookie("Max-Age:", strconv.Itoa(maxAge*60))
-	} else {
-		c.Request().Header.SetCookie("token", token)
-		c.Request().Header.SetCookie("Path:", "/")
-		c.Request().Header.SetCookie("Max-Age:", strconv.Itoa(maxAge*60))
+	cookie := &fiber.Cookie{
+		Name:   "token",
+		Value:  token,
+		Path:   "/",
+		MaxAge: maxAge * 60,
 	}
+	if net.ParseIP(host) == nil {
+		// Only set Domain for named hosts, not raw IPs.
+		cookie.Domain = host
+	}
+	c.Cookie(cookie)
 }
 
 func GetUserID(c *fiber.Ctx) uint {
